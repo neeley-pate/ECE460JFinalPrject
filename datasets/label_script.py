@@ -11,7 +11,6 @@ for c in classes:
     
     label = classes[c]
     
-    
     cd = os.path.join(data_path, c)
     dirs = os.listdir(cd)
         
