@@ -1,2 +1,18 @@
 # no .DS_store from mac users
 **/.DS_Store
+keras_cnn.model/fingerprint.pb
+keras_cnn.model/keras_metadata.pb
+keras_cnn.model/saved_model.pb
+keras_cnn.model/variables/variables.data-00000-of-00001
+keras_cnn.model/variables/variables.index
+logs/Original_CNN/train/events.out.tfevents.1681929143.DESKTOP-EIA2FJU.7376.0.v2
+logs/Original_CNN/train/events.out.tfevents.1681929786.DESKTOP-EIA2FJU.7376.1.v2
+logs/Original_CNN/train/events.out.tfevents.1681929870.DESKTOP-EIA2FJU.7376.2.v2
+logs/Original_CNN/train/events.out.tfevents.1681929951.DESKTOP-EIA2FJU.7376.3.v2
+logs/Original_CNN/train/events.out.tfevents.1681930006.DESKTOP-EIA2FJU.7376.4.v2
+logs/Original_CNN/train/events.out.tfevents.1681930126.DESKTOP-EIA2FJU.7376.5.v2
+logs/Original_CNN/train/events.out.tfevents.1681930272.DESKTOP-EIA2FJU.7376.6.v2
+logs/Original_CNN/train/events.out.tfevents.1681930553.DESKTOP-EIA2FJU.7376.7.v2
+logs/Original_CNN/train/events.out.tfevents.1681930813.DESKTOP-EIA2FJU.7376.8.v2
+logs/Original_CNN/train/events.out.tfevents.1681930968.DESKTOP-EIA2FJU.7376.9.v2
+logs/Original_CNN/train/events.out.tfevents.1681931212.DESKTOP-EIA2FJU.7376.10.v2
