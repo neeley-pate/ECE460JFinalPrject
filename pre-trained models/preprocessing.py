@@ -10,11 +10,14 @@ DIGITAL_IMAGES_PATH = 'digital/StableDiffusion/'
 REAL_IMAGES_PATH = 'real-world/'
 PAINTING_IMAGES_PATH = 'Non-digital Artwork/'
 
+SEED = 69420
+
 def sampleImages(digital_image_samples, real_world_samples, artwork_samples, dimension=(224, 224)):
     digital_images_files = getImageFiles('digital')
     real_world_images_files = getImageFiles('real')
     artwork_images_files = getImageFiles('painting')
 
+    random.seed(SEED)
 
     digital_sampled_images = random.sample(list(digital_images_files), digital_image_samples)
     real_sampled_images = random.sample(list(real_world_images_files), real_world_samples)
