@@ -8,26 +8,8 @@ from keras.models import Sequential
 from keras.layers import Flatten
 from keras.layers import Dense
 from keras.layers import Dropout
-from keras.utils import load_img
-from keras.utils import img_to_array
 from sklearn.model_selection import train_test_split
-from keras.models import load_model
 from keras.utils import to_categorical
-
-
-def predict(X, Y, model_file):
-    '''
-    prints accuracy of model on test data
-
-    Parameters:
-        X: The test data
-        Y: The test labels
-        model_file: The file to load the model from
-    '''
-
-    model = load_model(model_file)
-    scores = model.evaluate(X, to_categorical(Y, num_classes=3), verbose=1)
-    print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 def train_model(X, Y, model_file, dimension=(224, 224), epochs=10, batch_size=32):
     '''
@@ -63,7 +45,6 @@ def train_model(X, Y, model_file, dimension=(224, 224), epochs=10, batch_size=32
     Y = to_categorical(Y, num_classes = 3)
     x_train, x_val, y_train, y_val = train_test_split(X, Y, test_size = 0.2, random_state = 42)
 
-    print(Y.shape)
     # train the model
     vgghist =  model.fit(x=x_train, y=y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_data=(x_val, y_val), shuffle=True, workers=1, use_multiprocessing=True)
 
