@@ -16,3 +16,5 @@ logs/Original_CNN/train/events.out.tfevents.1681930553.DESKTOP-EIA2FJU.7376.7.v2
 logs/Original_CNN/train/events.out.tfevents.1681930813.DESKTOP-EIA2FJU.7376.8.v2
 logs/Original_CNN/train/events.out.tfevents.1681930968.DESKTOP-EIA2FJU.7376.9.v2
 logs/Original_CNN/train/events.out.tfevents.1681931212.DESKTOP-EIA2FJU.7376.10.v2
+**/*.h5
+**/__pycache__/

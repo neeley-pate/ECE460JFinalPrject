@@ -10,11 +10,18 @@ DIGITAL_IMAGES_PATH = 'digital/StableDiffusion/'
 REAL_IMAGES_PATH = 'real-world/'
 PAINTING_IMAGES_PATH = 'Non-digital Artwork/'
 
-def sampleImages(digital_image_samples, real_world_samples, artwork_samples, dimension=(224, 224), verbose=False):
+TRAIN_SEED = 69420
+TEST_SEED = 42
+
+def sampleImages(digital_image_samples, real_world_samples, artwork_samples, dimension=(224, 224), verbose=False, testing=False):
     digital_images_files = getImageFiles('digital')
     real_world_images_files = getImageFiles('real')
     artwork_images_files = getImageFiles('painting')
 
+    if testing:
+        random.seed(TRAIN_SEED)
+    else:
+        random.seed(TEST_SEED)
 
     digital_sampled_images = random.sample(list(digital_images_files), digital_image_samples)
     real_sampled_images = random.sample(list(real_world_images_files), real_world_samples)
