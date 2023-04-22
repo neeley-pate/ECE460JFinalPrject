@@ -16,11 +16,32 @@ from keras.utils import to_categorical
 
 
 def predict(X, Y, model_file):
+    '''
+    prints accuracy of model on test data
+
+    Parameters:
+        X: The test data
+        Y: The test labels
+        model_file: The file to load the model from
+    '''
+
     model = load_model(model_file)
     scores = model.evaluate(X, to_categorical(Y, num_classes=3), verbose=1)
     print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 def train_model(X, Y, model_file, dimension=(224, 224), epochs=10, batch_size=32):
+    '''
+    Trains a model using the VGG16 architecture. Saves the model to the specified file.
+
+    Parameters:
+        X: The training data
+        Y: The training labels
+        model_file: The file to save the model to
+        dimension: The dimension of the images
+        epochs: The number of epochs to train for
+        batch_size: The batch size to use
+    '''
+    
     trained_model = VGG16(input_shape = (dimension[0], dimension[1], 3), include_top = False, weights = 'imagenet')
 
     # do not train all layers
@@ -54,5 +75,5 @@ def train_model(X, Y, model_file, dimension=(224, 224), epochs=10, batch_size=32
     print("Accuracy: %.2f%%" % (scores[1]*100))
 
     # save the model
-    model.save('vgg-16_fully_trained.h5')
+    model.save(model_file)
 
