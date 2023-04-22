@@ -17,11 +17,11 @@ from keras.utils import to_categorical
 
 def predict(X, Y, model_file):
     model = load_model(model_file)
-    scores = model.evaluate(X, Y, verbose=0)
+    scores = model.evaluate(X, to_categorical(Y, num_classes=3), verbose=1)
     print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
-def train_model(X, Y, model_file):
-    trained_model = VGG16(input_shape = (224, 224, 3), include_top = False, weights = 'imagenet')
+def train_model(X, Y, model_file, dimension=(224, 224), epochs=10, batch_size=32):
+    trained_model = VGG16(input_shape = (dimension[0], dimension[1], 3), include_top = False, weights = 'imagenet')
 
     # do not train all layers
     for layer in trained_model.layers:
@@ -44,7 +44,7 @@ def train_model(X, Y, model_file):
 
     print(Y.shape)
     # train the model
-    vgghist =  model.fit(x=x_train, y=y_train, batch_size=32, epochs=10, verbose=1, validation_data=(x_val, y_val), shuffle=True, workers=1, use_multiprocessing=True)
+    vgghist =  model.fit(x=x_train, y=y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_data=(x_val, y_val), shuffle=True, workers=1, use_multiprocessing=True)
 
     # evaluate the model by calculating accuracy
     scores = model.evaluate(x_val, y_val, verbose=1)
