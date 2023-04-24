@@ -42,8 +42,6 @@ VGG-16 is a popular pre-trained image classification model from the Keras librar
 #### ResNet50
 ResNet50 is a variant of the ResNet model, which is a type of Artificial Neural Network (ANN) that stacks residual blocks, and is used for image recognition tasks. It is a 50 convolutional neural network (CNN) layers, composed of 48 convolutional layers, 1 MaxPool layer, and 1 average pool layer. The pre-trained model contains over 23 trainable parameters, and displays higher performance by creating shorter connections through residual mapping (as opposed to direct mapping). ResNet50 specifically implements a Bottleneck design, in which it contains 1x1 convolution layers in the residual blocks that allows for faster training.  
 
-![alt text](https://www.researchgate.net/publication/349717475/figure/fig4/AS:996933933993986@1614698980245/The-architecture-of-ResNet-50-model.ppm)
-
 #### Inceptionv3
 TODO
 
