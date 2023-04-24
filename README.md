@@ -40,7 +40,7 @@ TODO
 VGG-16 is a popular pre-trained image classification model from the Keras library. The pre-trained model is a large CNN with 16 weight layers and approximately 138 million parameters. VGG-16 needed to be fine tuned for classification of 128x128 and 64x64 images using the Keras library. To fine tune the model for our task, an additional dense layer with ReLU activation was stacked on top of the output. Another dropout layer was included before running a softmax in order to account for overfitting. Overall, the 128x128 model performed better on the testing set.
 
 #### ResNet50
-ResNet50 is a variant of the ResNet model, which is a type of Artificial Neural Network (ANN) that stacks residual blocks, as opposed to direct mapping.  
+ResNet50 is a variant of the ResNet model, which is a type of Artificial Neural Network (ANN) that stacks residual blocks, and is used for image recognition tasks. It is a 50 convolutional neural network (CNN) layers, composed of 48 convolutional layers, 1 MaxPool layer, and 1 average pool layer. The pre-trained model contains over 23 trainable parameters, and displays higher performance by creating shorter connections through residual mapping (as opposed to direct mapping). ResNet50 specifically implements a Bottleneck design, in which it contains 1x1 convolution layers in the residual blocks that allows for faster training.  
 
 #### Inceptionv3
 TODO
