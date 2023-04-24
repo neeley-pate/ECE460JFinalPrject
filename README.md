@@ -19,6 +19,7 @@ Lee et. al. (June 2021) discusses that while there are many uses for real image 
 Appropriate datasets were found for each of the classes, mostly from Papers with Code and various Kaggle competitions. For the Artwork class, datasets contained different types of paintings and collectively consisted of 29 different genres, ranging from impression and portraits, to realism and romanticism. For the Real-World class, the data ranged from images consisting of faces, food, landscapes and bodies of water, and other miscellaneous ones taken by a camera. For the Digital Renderings class, the images were created using stable diffusion, a deep-learning text-to-image model.
 
 ## Data Visualization
+TODO
 
 ## Pre-Processing
 For all models, 1,000 images were used from each class, or 3,000 total for train and test. Despite having 15,000 total images, this proved to take too much processing power to use all images on a given model, so the images were sampled from this dataset. The images were 128 x 128 pixels, and were RGB encoded.
@@ -42,6 +43,7 @@ VGG-16 is a popular pre-trained image classification model from the Keras librar
 ResNet50 is a variant of the ResNet model, which is a type of Artificial Neural Network (ANN) that stacks residual blocks, as opposed to direct mapping.  
 
 #### Inceptionv3
+TODO
 
 #### EfficientNet
 EfficientNet is one of the newest image classification models from Google. It uses a scaling method called Compound scaling, which is essentially scaling the dimensions of parameters by a fixed number at the same time and uniformly. This model uses this scaling technique and multiple convolutional layers to achieve a very high performance with only 5.3 million parameters. We used the output of this model as input to a fully connected layer of 1024 neurons with ReLu activation. We then passed the output of this layer to a dropout layer to decrease overfitting, then finally to a softmax layer.
