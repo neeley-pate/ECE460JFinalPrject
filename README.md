@@ -15,6 +15,17 @@ Ahmad and Khursheed (May 2021) published an in-depth introduction and review of 
 Lee et. al. (June 2021) discusses that while there are many uses for real image detection, often “unusual images” such as pieces of art go unlearned and act as a limitation for some image processing models. Their study finds that it is possible to detect real world features from pieces of art, such as hands and shoulders from children’s drawings.
 [Link to Paper](https://link.springer.com/chapter/10.1007/978-3-030-79474-3_7)
 
+Tokuda, E., Pedrini, H., & Rocha, A. (November 2013) explored differentiation between photo-realistic computer-generated images and real photographs. They have implemented a total of 13 methods based on different features of an image. The results showed that the implemented methods achieved up to 93% accuracy without machine learning fusion, and when combined through the implemented fusion schemes, the accuracy rate reached 97%, representing a 57% reduction in classification error over the best individual result.
+[Link to Paper](https://www.researchgate.net/publication/259141839_Computer_generated_images_vs_digital_photographs_A_synergetic_feature_and_classifier_combination_approach)
+
+Passos Júnior, L. A., Jodas, D., da Costa, K. A. P., & Souza Júnior, L. A. (February 2022) present a comprehensive review of recent studies on deepfake content detection using deep learning-based approaches, aiming to expand the state-of-the-art research by systematically reviewing different categories of fake content detection.  They emphasize the need for more robust and dynamic approaches to handle realistic deepfake content, the potential of semi-supervised learning techniques, and the importance of combining supervised and unsupervised learning for rapidly identifying and actively tracking patterns related to modern and complex fake content production algorithms.
+[Link to Paper](https://www.researchgate.net/publication/358603507_A_Review_of_Deep_Learning-based_Approaches_for_Deepfake_Content_Detection)
+
+Gangan, M. P., Kadan, A., & Lajish, V. L. (August 2022) propose a deep learning-based Multi-Colorspace fused EfficientNet model to classify natural images and photo-realistic computer-generated images, including both computer graphics and GAN images. The authors approach the problem as a three-class classification task for the first time, considering natural, computer graphics, and GAN images. The proposed model outperforms state-of-the-art methods in terms of accuracy, robustness against post-processing operations, and generalizability to other datasets. The authors also conduct psychophysics experiments to compare human classification accuracy with their model's performance, finding that humans have difficulty classifying the images, particularly computer-generated ones, which highlights the necessity of computational algorithms for the task. 
+[Link to Paper](https://www.researchgate.net/publication/361875698_Distinguishing_natural_and_computer_generated_images_using_Multi-Colorspace_fused_EfficientNet)
+
+
+
 ## Data Collection
 Appropriate datasets were found for each of the classes, mostly from Papers with Code and various Kaggle competitions. For the Artwork class, datasets contained different types of paintings and collectively consisted of 29 different genres, ranging from impression and portraits, to realism and romanticism. For the Real-World class, the data ranged from images consisting of faces, food, landscapes and bodies of water, and other miscellaneous ones taken by a camera. For the Digital Renderings class, the images were created using stable diffusion, a deep-learning text-to-image model.
 
@@ -33,7 +44,7 @@ For the CNN, the Keras library was used to build a custom model. The model saved
 The Logistic Regression model also uses the Keras library. This model also saved 25% of the images for testing. The logistic regression model is very similar to the CNN without the convolutional layers. It takes the images, condenses them, then runs it through a layer that gives 3 outputs that are run through a softmax. The loss for this model
 
 #### Multi Layer Perceptron
-TODO
+For the MLP model, the Keras library was employed as well. In this case, 20% of the images were saved for testing. The architecture of the MLP model consists of an initial Flatten layer to convert the input image into a one-dimensional array. Following this, there are three fully connected Dense layers with ReLU activation functions, each accompanied by Dropout layers with specified dropout rates. The final Dense layer has 3 outputs and uses a softmax activation function. To find the optimal hyperparameters, the model is trained using various combinations of batch sizes, learning rates, and dropout rates. The training process uses Stratified K-fold cross-validation, ensuring balanced class representation in each fold. Early stopping is not employed, but the training is limited to 10 epochs.
 
 ### Transfer Learning
 #### VGG-16
@@ -53,7 +64,7 @@ EfficientNet is one of the newest image classification models from Google. It us
 | ------------ | ------------- |
 | Keras CNN     | 53.2%     |
 | Logistic Regression   | 53.7%      |
-| MLP | 33.6 - 37.8% |
+| MLP | 37.8% |
 | VGG 16     | 89.9%     |
 | ResNet50     | 90%     |
 | Inceptionv3   | 47.1%      |
